@@ -1,0 +1,26 @@
+{
+  "database": {
+    "type": "none",
+    "options": ["none", "mongodb", "prisma"],
+    "dependencies": {
+      "mongodb": {
+        "packages": ["mongoose"],
+        "devPackages": [],
+        "template": "templates/mongo/connection.ts",
+        "destination": "src/shared/database/connection.ts"
+      },
+      "prisma": {
+        "packages": ["@prisma/client"],
+        "devPackages": ["prisma"],
+        "template": "templates/prisma/connection.ts",
+        "destination": "src/shared/database/connection.ts",
+        "additionalFiles": [
+          {
+            "template": "templates/prisma/schema.prisma",
+            "destination": "prisma/schema.prisma"
+          }
+        ]
+      }
+    }
+  }
+}
